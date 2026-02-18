@@ -15,10 +15,14 @@ def get_requirements(file_path:str)-> List[str]:
     '''
     requirements = []
     with open(file_path) as f:
-        requirements = [req.replace("\n", "") for req in f.readlines()]
+        requirements = f.readlines()
+        requirements = [req.replace("\n", "") for req in requirements]
         
         if HYPHEN_E_DOT in requirements:
             requirements.remove(HYPHEN_E_DOT)
+            
+    return requirements        
+            
 
 
 
